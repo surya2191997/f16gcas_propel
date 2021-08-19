@@ -23,7 +23,7 @@ def env_fn():
     my_env = csys.SystemEnv("autopilot", my_system, terminating_conditions=ground_collision_condition)
     return my_env 
 
-'''
+
 def train_ddpg(args):
     eg = ExperimentGrid("train_ddpg")
     eg.add('env_fn', env_fn)
@@ -44,7 +44,7 @@ parser.add_argument('--env_name', type=str, default="Safexp-PointGoal1-v0")
 parser.add_argument('--exp_name', type=str, default='ddpg-9gamma-rawruntil')
 args = parser.parse_args()
 train_ddpg(args)
-'''
+
 
 import sys
 sys.path.insert(0, '/home/sdwivedi/f16_propel/smpolicysynth/')
@@ -56,7 +56,7 @@ from synth.policy.state_machine import *
 from synth.policy_grammars.straight_traj_grammar import *
 from synth.policy_grammars.traj_opt_wrapper import *
 
-'''
+
 
 def distill_into_sm(h, gym_env):
     gym_env.reset()
@@ -136,7 +136,7 @@ def smpropel():
             g.save('f16_sm')
     # h = g + lambda_*f -> This operation happens inside train_via_drl method
     return g
-'''
+
 
 min_sm = ProbStateMachinePolicy(env_fn(), [], [], [], [])
 min_sm.read("f16_sm")
